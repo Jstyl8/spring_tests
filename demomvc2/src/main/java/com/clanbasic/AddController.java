@@ -14,11 +14,13 @@ public class AddController {
 
         int i = Integer.parseInt(request.getParameter("t1"));
         int j = Integer.parseInt(request.getParameter("t2"));
-        int k = i + j;
+
+        AddService addService = new AddService();
+        int k = addService.add(i, j);
 
         ModelAndView mv = new ModelAndView();
         mv.setViewName("display.jsp");
-        mv.addObject("result",k);
+        mv.addObject("result", k);
         return mv;
     }
 }
