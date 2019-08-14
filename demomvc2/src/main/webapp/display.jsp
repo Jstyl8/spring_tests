@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-EYYYY
+Result is : <%= request.getAttribute("result") %>
 </body>
 </html>
