@@ -1,4 +1,4 @@
-package com.clanbasic;
+package com.clanbasic.controller;
 
 import com.clanbasic.service.AddService;
 import org.springframework.stereotype.Controller;
@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class AddController {
+
     @RequestMapping("/add")
-    public ModelAndView add(@RequestParam("t1") int i, @RequestParam("t2") int j, HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView add(@RequestParam("t1") int i, @RequestParam("t2") int j) {
 
 //        int i = Integer.parseInt(request.getParameter("t1"));
 //        int j = Integer.parseInt(request.getParameter("t2"));
