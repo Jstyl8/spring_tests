@@ -1,0 +1,44 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+// for this property, plugin application is needed
+mainClassName = 'hello.HelloWorld'
+
+// tag::repositories[]
+repositories {
+    mavenCentral()
+}
+// end::repositories[]
+
+// tag::jar[]
+jar {
+	// makes a fat-jar file so the dependencies are packed with the jar
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+	manifest {
+        attributes 'Main-Class': 'hello.HelloWorld'
+    }
+    baseName = 'gs-gradle'
+    version =  '0.1.0'
+}
+// end::jar[]
+
+// tag::dependencies[]
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	compile 'log4j:log4j:1.2.17'
+    compile "joda-time:joda-time:2.2"
+    testCompile "junit:junit:4.12"
+}
+// end::dependencies[]
+// tag::test[]
+test {
+    useJUnit {
+        includeCategories 'UnitTest'
+    }
+}
+// end::test[]
+
+// tag::wrapper[]
+// end::wrapper[]
