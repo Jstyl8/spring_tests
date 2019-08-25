@@ -1,0 +1,22 @@
+{
+  "name": "gs-rest-service-nodejs",
+  "homepage": "https://github.com/Jstyl8/spring_tests",
+  "authors": [
+    "Jota <joseangel.jstyl8@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "rest": "~1",
+    "curl": "~0.8"
+  }
+}
